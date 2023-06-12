@@ -11,7 +11,12 @@ int main() {
     cout << "Enter an operation which you want to perform (+, -, *, /): ";
     cin >> operation;
 
-    cout << "Enter the second number: ";
+    cout << "Enter the second number: ";sdm,bfjibeaih iewr
+    erwjfbuier]
+    wjefboer
+    bwiohfb;erqv
+    rkefgfueronmv
+    'r[eigvne'
     cin >> num2;
 
     double result;
