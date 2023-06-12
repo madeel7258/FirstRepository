@@ -12,17 +12,7 @@ int main() {
     cin >> operation;
 
     cout << "Enter the second number: ";
-    cin >> num2;wemngkfweklnmlgmwewe
-    f
-    we
-    g
-    
-    ear
-    ger
-    g
-    r
-    
-
+    cin >> num2;
     double result;
     bool isValid = true;
 
