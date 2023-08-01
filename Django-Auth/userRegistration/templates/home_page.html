@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Heuristics - AI-Based Software House</title>
+    <style>
+        /* Reset some default styles */
+        body, h1, h2, h3, p, ul, li {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        .hero {
+            background-image: url('/static/image.jpg');
+            background-color: #f1f1f1;
+            background-size: cover; /* Adjust as needed */
+            background-position: center; /* Adjust as needed */
+            height: 800px; /* Adjust the height as desired */
+            text-align: center;
+        }
+
+        .hero-content {
+            padding: 270px 0; /* Adjust the padding around the content as needed */
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <h2>AI-Based Software House</h2>
+            <p>Transforming businesses with cutting-edge AI solutions.</p>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2023 System Heuristics. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+{% endblock body %}
