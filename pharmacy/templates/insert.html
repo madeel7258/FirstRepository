@@ -1,0 +1,150 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Insert Data</title>
+     <style>
+         body {
+             font-family: Arial, sans-serif;
+             margin: 0;
+             padding: 0;
+             background-color: #f1f1f1;
+             display: flex;
+             flex-direction: column;
+             align-items: center;
+             min-height: 90vh;
+         }
+      
+  
+         .title-container {
+             background-color: #ffffff;
+             width: 100%;
+             padding: 5px;
+             border-radius: 5px;
+             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+             margin-bottom: 20px;
+             text-align: center;
+             position: relative; 
+             margin-top: 20px;
+         }
+         
+         .title-container h1 {
+             margin: 0;
+             padding: 20px;
+             color: #333;
+         }
+         .logout-button {
+             position: absolute;
+             top: 50%; /* Center vertically */
+             right: 15px;
+             transform: translateY(-50%); /* Adjust for vertical centering */
+             background-color: #d9534f;
+             color: #fff;
+             padding: 5px 10px;
+             border: none;
+             border-radius: 5px;
+             cursor: pointer;
+             font-size: 20px;
+             transition: background-color 0.3s ease;
+         }
+         .user-info {
+            position: absolute;
+            top: 50%; /* Center vertically */
+            right: 100px;
+            transform: translateY(-50%); /* Adjust for vertical centering */
+            
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+         .logout-button:hover {
+             background-color: #c9302c;
+         }
+         .form-container {
+             background-color: #ffffff;
+             width: 400px;
+             padding: 20px;
+             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+             border-radius: 5px;
+             text-align: center;
+             margin-top: 30px;
+         }
+         .form-container h1 {
+             margin-bottom: 20px;
+             color: #333;
+         }
+         .input-group {
+             margin-bottom: 20px;
+             padding: 0 15px;
+         }
+         .input-group label {
+             display: block;
+             font-size: 14px;
+             margin-bottom: 5px;
+             color: #666;
+             text-align: left;
+         }
+         .input-group input {
+             width: 100%;
+             padding: 10px;
+             border: 1px solid #ccc;
+             border-radius: 5px;
+             font-size: 14px;
+         }
+         button {
+             background-color: #007bff;
+             color: #fff;
+             padding: 10px 20px;
+             border: none;
+             border-radius: 5px;
+             cursor: pointer;
+             font-size: 14px;
+             transition: background-color 0.3s ease;
+         }
+         button:hover {
+             background-color: #0056b3;
+         }
+     </style>
+ </head>
+ <body>
+    <div class="title-container">
+        <h1>PHARMACY</h1>
+        {% if request.session.emailPharmacy %}
+        <div class="user-info">
+            <p> {{ request.session.emailPharmacy }} | </p>
+        </div>
+        {% endif %}
+        <button class="logout-button" onclick="window.location.href='{% url 'logout' %}'">Logout</button>
+    </div>
+     <div class="form-container">
+         <form>
+             <h1>Insert Data</h1>
+             <div class="input-group">
+                 <label for="order_id">Order ID</label>
+                 <input type="text" id="order_id" name="order_id" placeholder="Enter Order ID">
+             </div>
+             <div class="input-group">
+                 <label for="script_id">Script ID</label>
+                 <input type="text" id="script_id" name="script_id" placeholder="Enter Script ID">
+             </div>
+             <button type="button" onclick="submitForm()">Submit</button>
+         </form>
+     </div>
+     <script>
+         function submitForm() {
+             const orderId = document.getElementById('order_id').value;
+             const scriptId = document.getElementById('script_id').value;
+             let url = '/show_order/';
+             
+             if (orderId) {
+                 url += `?order_id=${orderId}`;
+             } else if (scriptId) {
+                 url += `?script_id=${scriptId}`;
+             }
+ 
+             window.location.href = url;
+         }
+     </script>
+ </body>
+ </html> 
